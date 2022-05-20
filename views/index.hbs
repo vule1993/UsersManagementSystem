@@ -1,0 +1,32 @@
+<div class="row pb-3">
+  <div class="col-6"><h1>Users</h1></div>
+  <div class="col-6 d-flex justify-content-end">
+    <button onclick="location.href = '/addNewUser';" type="button" class="btn btn-primary align-self-center"><i class="bi bi-person-plus"></i> Add New User</button>
+  </div>
+</div>
+
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">@Email</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Status</th>
+      <th scope="col" class="text-end">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+    <tr>
+      <td>{{this.name}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.phone_number}}</td>
+      <td>{{this.status}}</td>
+      <td class="text-end" >
+          <a href="/editUser?id={{this._id}}" type="button" class="btn btn-outline-secondary btn-small"><i class="bi bi-pencil-square">Edit</i></a>
+          <a href="/deleteUser?id={{this._id}}" type="button" class="btn btn-outline-secondary btn-small"><i class="bi bi-person-x">Delete</i></a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

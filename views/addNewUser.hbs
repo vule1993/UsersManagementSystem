@@ -1,0 +1,37 @@
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">User Management</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Add New User</li>
+  </ol>
+</nav>
+
+{{#if alert}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{alert}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<form class="row g-3 needs-validation border border-secondary rounded pt-2 mt-3" method="POST" id="add_user" action="/api/users">
+<h3 class="d-flex justify-content-center">Add New User</h3>
+<div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" value="" placeholder="First Name" name="name" required />
+    <label for="floatingInput">Full Name</label>
+</div>
+<div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingPassword" value="" placeholder="Email Address"
+        name="email" required />
+    <label for="floatingPassword">Email Address</label>
+</div>
+<div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingPassword" value="" placeholder="Phone Number"
+        name="phone_number" required />
+    <label for="floatingPassword">Phone Number</label>
+</div>
+
+<div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingPassword" value="" placeholder="status"
+        name="status" required />
+    <label for="floatingPassword">status</label>
+</div>
+<button class="btn btn-primary mb-3" type="submit">Save</button></form>

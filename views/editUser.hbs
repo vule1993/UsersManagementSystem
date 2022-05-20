@@ -1,0 +1,13 @@
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">User Management</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Update User Information</li>
+  </ol>
+</nav>
+
+{{#user}}
+<form class="row g-3 needs-validation border border-secondary rounded pt-2 mt-3" id="update_user" method="POST" >
+<h3 class="d-flex justify-content-center">Update User</h3>
+{{> user-input-form}}
+</form>
+{{/user}}
